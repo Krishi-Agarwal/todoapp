@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img_1"
+
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:background="@drawable/background"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/todaysdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="10dp"
+            android:background="#A3000000"
+            android:fontFamily="sans-serif-condensed"
+            android:foregroundGravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:text="28 October 2023"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="10dp"
+            android:background="#A3000000"
+            android:fontFamily="sans-serif-condensed"
+            android:foregroundGravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:text="MY TO DO LIST"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/currentTask"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@+id/ll"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="-100dp"
+        android:background="@color/white"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/videocardview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:contentPadding="20dp"
+            android:accessibilityLiveRegion="none"
+            app:cardBackgroundColor="#FFFFFF"
+            app:cardCornerRadius="20dp"
+            app:cardPreventCornerOverlap="false">
+
+            <VideoView
+                android:id="@+id/video"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:background="#00FFFFFF"
+                android:clickable="false"
+                android:visibility="invisible" />
+        </androidx.cardview.widget.CardView>
+
+        <ListView
+            android:id="@+id/upcomming"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:fastScrollAlwaysVisible="false"
+            android:fastScrollEnabled="false"
+            android:isScrollContainer="false"
+            android:nestedScrollingEnabled="false"
+            android:overScrollMode="ifContentScrolls"
+            android:scrollIndicators="right"
+            android:scrollbarSize="4dp" />
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/textCurrentClass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/currentTask"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="5dp"
+        android:gravity="center_horizontal"
+        android:text="Completed"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/completed"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@+id/textCurrentClass"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/white"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp">
+        <androidx.cardview.widget.CardView
+            android:id="@+id/completedVideoCardView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:cardBackgroundColor="@color/white"
+            app:contentPadding="20dp"
+            android:visibility="invisible"
+            >
+            <VideoView
+                android:id="@+id/completedVideView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="invisible"/>
+        </androidx.cardview.widget.CardView>
+
+        <ListView
+            android:id="@id/completedtasksview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fastScrollAlwaysVisible="false"
+            android:keepScreenOn="true" />
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/addTask"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="10dp"
+
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="#000000"
+        android:gravity="center|center_horizontal"
+        android:shadowColor="#000000"
+        android:text="ADD MORE TASK"
+        android:textColor="#FBFBFB"
+        android:textColorHighlight="#000000"
+        android:textColorHint="#000000"
+        android:textColorLink="#000000"
+        app:icon="@android:drawable/ic_input_add"
+        app:iconGravity="textStart"
+        app:iconTint="#FFFFFF"
+        app:rippleColor="#000000"
+        app:strokeColor="#000000" />
+    <Button
+        android:id="@+id/refresh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/addTask"
+        android:layout_marginStart="10dp"
+
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="#000000"
+        android:gravity="center|center_horizontal"
+        android:shadowColor="#000000"
+        android:text="REFRESH"
+        android:textColor="#FBFBFB"
+        android:textColorHighlight="#000000"
+        android:textColorHint="#000000"
+        android:textColorLink="#000000"
+        app:icon="@android:drawable/ic_menu_rotate"
+        app:iconGravity="textStart"
+        app:iconTint="#FFFFFF"
+        app:rippleColor="#000000"
+        app:strokeColor="#000000" />
+
+
+</RelativeLayout>
